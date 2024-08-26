@@ -1,3 +1,6 @@
+pset.pdf: pset.tex
+	latexmk -pdf $^
+
 clean:
 	rm -f *.aux
 	rm -f *.fdb_latexmk
