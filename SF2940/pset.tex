@@ -1,0 +1,41 @@
+\documentclass{article}
+\title{Problem set, SF2940}
+\author{Ville Sebastian Olsson}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[parfill]{parskip}
+\setcounter{secnumdepth}{0}
+\begin{document}
+\maketitle
+
+\section{3.1}
+
+Show that if \(X \in C(0,1)\), then so is \(1/X\).
+
+\textbf{Solution:}
+
+\(X\) and \(1/X\) have the same distribution if \(f_X=f_{1/X}\):
+
+\[f_X(x;x_0,\gamma) = \frac{1}{\pi\gamma(1+\frac{(x-x_0)^2}{\gamma^2})}\]
+\[f_X(x;0,1) = \frac{1}{\pi \cdot 1 \cdot (1+\frac{(x-0)^2}{1^2})}\]
+\[f_X(x;0,1) = \frac{1}{\pi (x^2+1)}\]
+Let \(Y=g(X)\) where \(g: \mathbb{R}\setminus\{0\}\to\mathbb{R}\setminus\{0\}\), \(g(x) = \frac{1}{x}\).
+
+\(g\) is bijective, strictly monotone, and its inverse is:
+\[g^{-1}(x) = \frac{1}{x}\]
+
+\begin{align*}
+& f_{1/X}(y;0,1) \\
+&= f_Y(y;0,1) \\
+&= f_X(g^{-1}(y);0,1) \cdot |\frac{d}{dy}g^{-1}(y)| \\
+&= \frac{1}{\pi (g^{-1}(y)^2+1)} \cdot |\frac{d}{dy}\frac{1}{y}| \\
+&= \frac{1}{\pi ((\frac{1}{y})^2+1)} \cdot |-\frac{1}{y^2}| \\
+&= \frac{1}{\pi (\frac{1}{y^2}+1)} \cdot \frac{1}{y^2} \\
+&= \frac{1}{\pi (1+y^2)} \\
+&= f_X(y;0,1) \\
+\end{align*}
+
+\(\therefore f_{1/X}\in C(0,1)\)
+
+\end{document}
