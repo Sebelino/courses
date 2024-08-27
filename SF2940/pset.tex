@@ -9,6 +9,36 @@
 \begin{document}
 \maketitle
 
+\section{Quiz 1.2}
+
+Let \((\Omega, \mathcal{F}, P)\) be a probability space.
+Let \(A\in \mathcal{F}\) and \(B\in \mathcal{F}\)
+with \(A\subseteq B\).
+
+\textbf{a)} Is this statement correct?:
+\[P(B^\complement \cap A) = P(B)-P(A)\]
+
+\textbf{Solution:}
+
+No. Let \(A=\varnothing\) and \(P(B)>0\).
+
+\begin{align*}
+	 & LHS \\
+	 & P(B^\complement \cap A) \\
+	=& P(B^\complement \cap \varnothing) \\
+	=& P(\varnothing) \\
+	=& 0 \\
+\end{align*}
+while
+\begin{align*}
+	  & RHS \\
+	  & P(B)-P(A) \\
+	 =& P(B)-P(\varnothing) \\
+	 =& P(B)-0 \\
+	 =& P(B) \\
+	 >& 0
+\end{align*}
+
 \section{3.1}
 
 Show that if \(X \in C(0,1)\), then so is \(1/X\).
@@ -26,14 +56,14 @@ Let \(Y=g(X)\) where \(g: \mathbb{R}\setminus\{0\}\to\mathbb{R}\setminus\{0\}\),
 \[g^{-1}(x) = \frac{1}{x}\]
 
 \begin{align*}
-& f_{1/X}(y;0,1) \\
-&= f_Y(y;0,1) \\
-&= f_X(g^{-1}(y);0,1) \cdot |\frac{d}{dy}g^{-1}(y)| \\
-&= \frac{1}{\pi (g^{-1}(y)^2+1)} \cdot |\frac{d}{dy}\frac{1}{y}| \\
-&= \frac{1}{\pi ((\frac{1}{y})^2+1)} \cdot |-\frac{1}{y^2}| \\
-&= \frac{1}{\pi (\frac{1}{y^2}+1)} \cdot \frac{1}{y^2} \\
-&= \frac{1}{\pi (1+y^2)} \\
-&= f_X(y;0,1) \\
+ & f_{1/X}(y;0,1) \\
+=& f_Y(y;0,1) \\
+=& f_X(g^{-1}(y);0,1) \cdot |\frac{d}{dy}g^{-1}(y)| \\
+=& \frac{1}{\pi (g^{-1}(y)^2+1)} \cdot |\frac{d}{dy}\frac{1}{y}| \\
+=& \frac{1}{\pi ((\frac{1}{y})^2+1)} \cdot |-\frac{1}{y^2}| \\
+=& \frac{1}{\pi (\frac{1}{y^2}+1)} \cdot \frac{1}{y^2} \\
+=& \frac{1}{\pi (1+y^2)} \\
+=& f_X(y;0,1) \\
 \end{align*}
 
 \(\therefore f_{1/X}\in C(0,1)\)
