@@ -56,6 +56,43 @@ Yes.
 \end{align*}
 \end{proof}
 
+\section{Exercise 1.12.2.9}
+
+Suppose \(A,B \in \mathcal{A}\).
+
+Show that
+\[\min(P(A),P(B)) \geq P(A\cap B) \geq P(A)+P(B)-1\]
+
+\textbf{Solution:}
+
+We first need to show that
+\[\min(P(A), P(B)) \geq P(A \cap B)\]
+
+\begin{proof}
+Monotonicity theorem:
+\[\forall A,B\in \mathcal{A}: (A\subseteq B \Rightarrow P(A)\leq P(B))\]
+
+Since \(A\cap B \subseteq A\), \(P(A\cap B) \leq P(A)\).
+
+Since \(A\cap B \subseteq B\), \(P(A\cap B) \leq P(B)\).
+
+\begin{align*}
+	 & P(A\cap B)\leq P(A) \wedge P(A\cap B)\leq P(B) \\
+	\Rightarrow & P(A \cap B) \leq \min(P(A), P(B))
+\end{align*}
+\end{proof}
+
+Next, we show that
+\[P(A \cap B) \geq P(A)+P(B)-1\]
+
+\begin{proof}
+\begin{align*}
+	 & P(A \cap B) \\
+	=& P(A)+P(B)-P(A \cup B) \\
+	\geq& P(A)+P(B)-1 & (\text{ since } P(B)\leq 1) \\
+\end{align*}
+\end{proof}
+
 \section{Quiz 1.3}
 
 Let \((\Omega, \mathcal{A}, P)\) be a probability space.
