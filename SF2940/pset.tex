@@ -99,6 +99,66 @@ Show that \(P(A\cap B) \geq 1-2\delta\).
 	=& 1-2\delta
 \end{align*}
 
+\section{Quiz 1.6}
+
+Let \(X\) be a random variable with continuous distribution whose CDF is given by
+\[F_X(x) = \begin{cases}
+	0 &\text{ if } x\leq 0 \\
+	cx^2 &\text{ if } 0<x<2 \\
+	1 &\text{ if } x \geq 2 \\
+\end{cases}\]
+
+\textbf{a)} Determine the constant \(c\).
+
+\textbf{Solution:}
+
+\(F_X(2)=1\). Since \(X\) is a continuous r.v., \(F_X\) is continuous. So:
+
+\begin{align*}
+	 & \lim_{x\uparrow 2}F_X(x)=1 \\
+	\Rightarrow & c\cdot 2^2=1 \\
+	\Rightarrow & c=\frac14 \\
+\end{align*}
+
+\textbf{b)} Compute \(Var(X)\).
+
+\begin{align*}
+	 & f_X(x) \\
+	=& \frac{d}{dx}F_X(x) \\
+	=& \frac{d}{dx}\casesiii{0}{x\leq 0}{cx^2}{0<x<2}{1} \\
+	=& \casesiii{0}{x\leq 0}{2cx}{0<x<2}{0} \\
+	=& \casesiii{0}{x\leq 0}{\frac12x}{0<x<2}{0} \\
+	=& \casesii{\frac12x}{0<x<2}{0} \\
+\end{align*}
+\begin{align*}
+	 & E[X] \\
+	=& \int_{-\infty}^\infty x f_X(x)dx \\
+	=& \int_{-\infty}^\infty x \casesii{\frac12x}{0<x<2}{0}dx \\
+	=& \int_{0}^2 x \frac12x dx \\
+	=& \int_{0}^2 \frac12x^2 dx \\
+	=& \frac16\hakparen{x^3}_0^2 dx \\
+	=& \frac16(2^3-0^3) \\
+	=& \frac{4}{3} \\
+\end{align*}
+\begin{align*}
+	 & E[X^2] \\
+	=& \int_{-\infty}^\infty x^2 f_X(x)dx \\
+	=& \int_{-\infty}^\infty x^2 \casesii{\frac12x}{0<x<2}{0}dx \\
+	=& \int_{0}^2 x^2 \frac12x dx \\
+	=& \int_{0}^2 \frac12x^3 dx \\
+	=& \frac18\hakparen{x^4}_0^2 \\
+	=& \frac18(2^4-0^4) \\
+	=& 2 \\
+\end{align*}
+\begin{align*}
+	 & Var(X) \\
+	=& E[X^2]-E[X]^2 \\
+	=& 2-\left(\frac{4}{3}\right)^2 \\
+	=& \frac{18}{9}-\frac{16}{9} \\
+	=& \frac{2}{9} \\
+\end{align*}
+
+\textbf{Solution:}
 \section{Gut, 3.1, p.24}
 
 Show that if \(X \in C(0,1)\), then so is \(1/X\).
