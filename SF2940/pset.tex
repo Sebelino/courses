@@ -39,6 +39,27 @@ while
 	 >& 0
 \end{align*}
 
+\section{Quiz 1.5}
+
+Assume
+\(P(A) \geq 1-\delta\) and \(P(B) \geq 1-\delta\) for some small \(\delta\geq0\).
+
+Show that \(P(A\cap B) \geq 1-2\delta\).
+
+\textbf{Solution:}
+
+\begin{align*}
+	 & P(A\cup B) \\
+	=& P(A)+P(B)-P(A\cap B) \\
+	\Rightarrow& \\
+	 & P(A\cap B) \\
+	=& P(A)+P(B)-P(A\cup B) \\
+	\geq& (1-\delta)+P(B)-P(A\cup B) & (\text{since }P(A) \geq 1-\delta) \\
+	\geq& (1-\delta)+(1-\delta)-P(A\cup B) & (\text{since }P(B) \geq 1-\delta) \\
+	\geq& (1-\delta)+(1-\delta)-1 & (\text{since }P(A\cup B) \leq 1) \\
+	=& 1-2\delta
+\end{align*}
+
 \section{3.1}
 
 Show that if \(X \in C(0,1)\), then so is \(1/X\).
