@@ -6,6 +6,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage[parfill]{parskip}
+\usepackage{sebelino-mathlib} % Custom sty file
 \setcounter{secnumdepth}{0}
 \begin{document}
 \maketitle
@@ -89,5 +90,38 @@ Let \(Y=g(X)\) where \(g: \mathbb{R}\setminus\{0\}\to\mathbb{R}\setminus\{0\}\),
 \end{align*}
 
 \(\therefore f_{1/X}\in C(0,1)\)
+
+\section{Gut, Exercise 1.1, p.57}
+
+Let \(X_1,X_2 \sim U(0,1)\), iid.
+
+Find the distribution of \(X_1+X_2\).
+
+\textbf{Solution:}
+
+Let \(Y=X_1+X_2\).
+
+\begin{align*}
+	 & f_Y(y) \\
+	=& \int_{-\infty}^\infty f_{X_1,X_2}(x_1,y-x_1)dx_1 \\
+	=& \int_{-\infty}^\infty f_{X_1}(x_1)f_{X_2}(y-x_1)dx_1 & (\text{ since } X_1,X_2\text{ iid.}) \\
+	=& \int_{-\infty}^\infty \casesii{1}{0\leq x_1 \leq 1}{0}f_{X_2}(y-x_1)dx_1 \\
+	=& \int_0^1 \casesii{1}{0\leq x_1 \leq 1}{0}f_{X_2}(y-x_1)dx_1 \\
+	=& \int_0^1 1\cdot f_{X_2}(y-x_1)dx_1 \\
+	=& \int_0^1 f_{X_2}(y-x_1)dx_1 \\
+	=& \int_0^1 \casesii{1}{0\leq y-x_1\leq 1}{0}dx_1 \\
+	=& \int_0^1 \casesii{1}{y-1\leq x_1\leq y}{0}dx_1 \\
+	=& \int_0^1 \casesii{1}{y-1\leq x_1\leq y\wedge 0\leq x_1 \leq 1}{0}dx_1 \\
+	=& \int_0^1 \casesii{1}{\max(0,y-1)\leq x_1\leq \min(1,y)}{0}dx_1 \\
+	=& \casesii{\int_0^1 \casesii{1}{\max(0,y-1)\leq x_1\leq \min(1,y)}{0}dx_1}{y \leq 1}{\int_0^1 \casesii{1}{\max(0,y-1)\leq x_1\leq \min(1,y)}{0}dx_1} \\
+	=& \casesii{\int_0^1 \casesii{1}{0\leq x_1\leq y}{0}dx_1}{y \leq 1}{\int_0^1 \casesii{1}{y-1\leq x_1\leq 1}{0}dx_1} \\
+	=& \casesii{\int_0^y \casesii{1}{0\leq x_1\leq y}{0}dx_1}{y \leq 1}{\int_{y-1}^1 \casesii{1}{y-1\leq x_1\leq 1}{0}dx_1} \\
+	=& \casesiii{\int_0^y 1dx_1}{0\leq x_1 \leq y \wedge y\leq 1}{\int_{y-1}^1 1dx_1}{y-1\leq x_1 \leq 1 \wedge \neg(y\leq 1)}{0} \\
+	=& \casesiii{\int_0^y 1dx_1}{0\leq y \wedge y\leq 1}{\int_{y-1}^1 1dx_1}{y-1\leq 1 \wedge y>1}{0} \\
+	=& \casesiii{\int_0^y 1dx_1}{0\leq y\leq 1}{\int_{y-1}^1 1dx_1}{1<y\leq 2}{0} \\
+	=& \casesiii{\hakparen{x_1}_0^y}{0\leq y\leq 1}{\hakparen{x_1}_{y-1}^1}{1<y\leq 2}{0} \\
+	=& \casesiii{y-0}{0\leq y\leq 1}{1-(y-1)}{1<y\leq 2}{0} \\
+	=& \casesiii{y}{0\leq y\leq 1}{2-y}{1<y\leq 2}{0} \\
+\end{align*}
 
 \end{document}
