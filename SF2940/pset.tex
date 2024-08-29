@@ -5,6 +5,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage[parfill]{parskip}
 \usepackage{sebelino-mathlib} % Custom sty file
 \setcounter{secnumdepth}{0}
@@ -123,5 +124,62 @@ Let \(Y=X_1+X_2\).
 	=& \casesiii{y-0}{0\leq y\leq 1}{1-(y-1)}{1<y\leq 2}{0} \\
 	=& \casesiii{y}{0\leq y\leq 1}{2-y}{1<y\leq 2}{0} \\
 \end{align*}
+
+\section{Modelltenta Problem 1}
+
+Let \(f : \mathbb{R} \to \mathbb{R}\) be a Borel function, and \(X\) be a
+random variable. Let \(Y = f(X)\).
+
+Prove that \(Y\) is a random variable.
+
+\textbf{Solution:}
+
+\begin{proof}
+Let \(X:\Omega\to \mathbb{R}\).
+Let \(\mathcal{A}\) be a \(\sigma\)-algebra on \(\Omega\).
+Let \(\mathcal{B}\) be the Borel algebra on \(\mathbb{R}\).
+
+\(Y\) is a random variable if \(Y\) is a measurable function w.r.t. measurable
+spaces \((\Omega, \mathcal{A})\), \((\mathbb{R}, \mathcal{B})\).
+
+\(Y\) is such a measurable function if \(\forall B\in \mathcal{B}: Y^{-1}(B)\in \mathcal{A}\).
+
+Let
+\[B\in \mathcal{B}\tag{I}\]
+
+We need to prove that \(Y^{-1}(B)\in \mathcal{A}\).
+
+\begin{align*}
+	 & Y^{-1}(B) \\
+	=& \{\omega\in \Omega: Y(\omega)\in B\} \\
+	=& \{\omega\in \Omega: f(X(\omega))\in B\} \\
+	=& \{\omega\in \Omega: f^{-1}(f(X(\omega)))\in f^{-1}(B)\} \\
+	=& \{\omega\in \Omega: X(\omega)\in f^{-1}(B)\} \\
+	=& X(f^{-1}(B)) \tag{II} \\
+\end{align*}
+
+Since \(X\) is a random variable:
+\[\forall B\in \mathcal{B}: X^{-1}(B)\in \mathcal{A} \tag{III}\]
+
+The preimage of \(f:\mathbb{R}\to\mathbb{R}\) is \(f^{-1}: \mathcal{B} \to\mathcal{B}\), so:
+\[\forall B \in \mathcal{B}: f^{-1}(B)\in \mathcal{B} \tag{IV}\]
+
+(I) and (IV) imply:
+\[f^{-1}(B) \in \mathcal{B} \tag{V}\]
+
+(V) and (III) imply:
+\[X^{-1}(f^{-1}(B))\in \mathcal{A}\tag{VI}\]
+
+(VI) and (II) imply:
+\[Y^{-1}(B) \in \mathcal{A}\]
+
+So:
+\[\forall B\in \mathcal{B}:Y^{-1}(B) \in \mathcal{A}\]
+
+Therefore, \(Y\) is a measurable function.
+
+Therefore, \(Y\) is a random variable.
+\end{proof}
+
 
 \end{document}
