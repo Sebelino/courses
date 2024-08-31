@@ -1,5 +1,5 @@
 # SF2940 Probability Theory
 
-```bash
-$ make pset.pdf
-```
+Moved to:
+
+https://github.com/Sebelino/overleaf-sf2940
